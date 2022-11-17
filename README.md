@@ -1,16 +1,6 @@
-# app
+Flutter Music App UI. The app has three screens, including:
+✔️  Home Screen with a carousel of songs and a list playlists, and a text form field to search for songs
+✔️  Playlist screen to list all the song of a specific playlist 
+✔️  Song screen to reproduce the song using Flutter
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+credit to Max on Flutter --> Flutter Music App UI - Flutter UI Tutorial for Beginners

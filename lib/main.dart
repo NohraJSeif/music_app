@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
                 displayColor: Colors.white,
               ),
         ),
-        home: const PlaylistScreen(),
+        home: const HomeScreen(),
         getPages: [
-          GetPage(name: '/', page: () => HomeScreen()),
+          GetPage(name: '/', page: () => const HomeScreen()),
           GetPage(name: '/song', page: () => const SongScreen()),
           GetPage(name: '/playlist', page: () => const PlaylistScreen()),
         ]);

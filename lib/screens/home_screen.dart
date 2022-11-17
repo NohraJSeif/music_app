@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import '../models/playlist_model.dart';
 import '../models/song_model.dart';
 import '../widgets/playlist_card.dart';
-import '../widgets/section_header.dart.dart';
+import '../widgets/section_header.dart';
 import '../widgets/song_card.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -42,31 +44,45 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const _DiscoverMusic(),
               _TrendingMusic(songs: songs),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        const SectionHeader(title: 'Playlists'),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          padding: const EdgeInsets.only(top: 20),
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: playlists.length,
-                          itemBuilder: ((context, index) {
-                            return PlaylistCard(playlist: playlists[index]);
-                          }),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              )
+              _PlaylistMusic(playlists: playlists),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _PlaylistMusic extends StatelessWidget {
+  const _PlaylistMusic({
+    Key? key,
+    required this.playlists,
+  }) : super(key: key);
+
+  final List<Playlist> playlists;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const SectionHeader(title: 'Playlists'),
+              ListView.builder(
+                shrinkWrap: true,
+                padding: const EdgeInsets.only(top: 20),
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: playlists.length,
+                itemBuilder: ((context, index) {
+                  return PlaylistCard(playlist: playlists[index]);
+                }),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
